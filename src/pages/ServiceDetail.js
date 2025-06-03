@@ -18,18 +18,20 @@ export default function ServiceDetail() {
 
   return (
     <main className="bg-white min-h-screen py-20 px-6 max-w-5xl mx-auto">
-      <h1 className="text-4xl font-bold text-blue-800 mb-6">{service.title}</h1>
-      <p className="text-lg text-gray-700 leading-relaxed mb-10">{service.detail}</p>
+      <header className="mb-10">
+        <h1 className="text-4xl font-bold text-blue-800 mb-4">{service.title}</h1>
+        <p className="text-lg text-gray-700 leading-relaxed">{service.detail}</p>
+      </header>
 
-      {service.examples && (
-        <div className="mt-10">
+      {service.examples && service.examples.length > 0 && (
+        <section className="mt-8">
           <h2 className="text-2xl font-semibold text-blue-700 mb-4">Examples of this service:</h2>
           <ul className="list-disc list-inside text-gray-700 space-y-2">
             {service.examples.map((item, idx) => (
               <li key={idx}>{item}</li>
             ))}
           </ul>
-        </div>
+        </section>
       )}
     </main>
   );
