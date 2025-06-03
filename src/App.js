@@ -16,7 +16,7 @@ export default function App() {
 
       <main>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/services/:serviceKey" element={<ServiceDetail />} />
         </Routes>
       </main>
 
